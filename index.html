@@ -1,97 +1,192 @@
-/* --- التجاوب مع الهواتف الذكية (Mobile Responsive) --- */
-@media (max-width: 768px) {
-    
-    /* 1. ضبط الحاوية العلوية لتظل أفقية */
-    .navbar-wrapper {
-        flex-direction: row !important; /* الحفاظ على الصف الأفي */
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 10px;
-        gap: 0;
-    }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOX - Protection Beyond Compare</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استيراد الخطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    /* 2. تصغير الخطوط والمسافات بين الروابط لتناسب عرض الهاتف */
-    .nav-group {
-        display: flex;
-        gap: 12px; /* تقليل المسافة بين الرابطين */
-        flex: 1;
-    }
+    <!-- الواجهة العلوية المتكاملة مع اللوجو -->
+    <header class="header-container">
+        <div class="navbar-wrapper">
+            <!-- الروابط اليسرى -->
+            <nav class="nav-group nav-left">
+                <a href="#" class="nav-item active">Products</a>
+                <a href="#" class="nav-item">Technology</a>
+            </nav>
 
-    .nav-left {
-        justify-content: flex-end;
-        padding-right: 8px;
-    }
+            <!-- الشعار الأوسط المدمج -->
+            <div class="brand-center">
+                <div class="logo-wrapper">
+                    <img src="images/logo.png" alt="VELOX Logo" class="brand-logo-img">
+                </div>
+                <div class="brand-name">VELOX</div>
+            </div>
 
-    .nav-right {
-        justify-content: flex-start;
-        padding-left: 8px;
-    }
+            <!-- الروابط اليمنى -->
+            <nav class="nav-group nav-right">
+                <a href="#" class="nav-item">About</a>
+                <a href="#" class="nav-item">Contact</a>
+            </nav>
+        </div>
 
-    .nav-item {
-        font-size: 11px; /* تصغير حجم خط القائمة */
-        letter-spacing: 0px;
-        padding-bottom: 4px;
-    }
+        <!-- الخط الفاصل المضاء خلف اللوجو -->
+        <div class="divider-line"></div>
 
-    /* 3. ضبط التوهج الأزرق تحت خيار Products للهاتف */
-    .nav-item.active::after {
-        bottom: -12px;
-        height: 2px;
-        width: 100%;
-    }
+        <!-- العنوان الرئيسي -->
+        <div class="hero-title-container">
+            <h1 class="main-title">PROTECTION BEYOND COMPARE</h1>
+        </div>
+    </header>
 
-    /* 4. تصغير حجم اللوجو والشعار الأوسط */
-    .brand-center {
-        margin: 0 5px;
-    }
+    <!-- حاوية المنتجات الرئيسية -->
+    <main class="products-container">
+        
+        <!-- المنتج الأول -->
+        <section class="product-card dark-bg">
+            <div class="product-gallery">
+                <div class="gallery-main">
+                    <img src="images/graphene-box.jpg" alt="VELOX Graphene Ceramic Coating Box 30ml">
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="thumb-item border-blue">
+                        <img src="images/graphene-gloss.png" alt="Effet Miroir & Brillance">
+                        <span class="thumb-label dark-label">BRILLANCE</span>
+                    </div>
+                    <div class="thumb-item border-blue">
+                        <img src="images/graphene-sheeting.png" alt="Écoulement de l'eau">
+                        <span class="thumb-label dark-label">ÉCOULEMENT</span>
+                    </div>
+                </div>
+            </div>
 
-    .logo-wrapper {
-        width: 40px;  /* حجم مناسب للهاتف */
-        height: 40px;
-    }
+            <div class="product-info">
+                <span class="product-badge">NOUVEAU</span>
+                <h2>REVÊTEMENT DE QUALITÉ PROFESSIONNELLE</h2>
+                <ul>
+                    <li>Dureté 10H</li>
+                    <li>Protection 3-5 ans</li>
+                    <li>Nanotechnologie Avancée</li>
+                    <li>Effet brillance spectaculaire</li>
+                    <li>Céramique adaptable</li>
+                </ul>
+                <button class="btn btn-light">COMMANDER MAINTENANT</button>
+            </div>
+            <div class="product-specs">
+                <table class="specs-table">
+                    <tr><td>Qualité</td><td>A++</td></tr>
+                    <tr><td>Capacité</td><td>30ml</td></tr>
+                    <tr><td>Ingrédient Principal</td><td>Grapheneceramic</td></tr>
+                    <tr><td>Bénéfices</td><td>Protection globale</td></tr>
+                </table>
+                <div class="badges">
+                    <div class="badge"><span class="angle">120°</span> Angle de contact</div>
+                    <div class="badge"><span class="count">500+</span> Lavages testés</div>
+                </div>
+            </div>
+        </section>
 
-    .brand-name {
-        font-size: 16px; /* تصغير اسم VELOX */
-        letter-spacing: 1.5px;
-        margin-top: 2px;
-    }
+        <!-- المنتج الثاني -->
+        <section class="product-card light-bg">
+            <div class="product-image">
+                <img src="images/ultra-box.jpg" alt="Graphene Ultra 10H Box 30ml">
+            </div>
 
-    /* 5. ضبط الخط الفاصل المضاء */
-    .divider-line {
-        margin-top: -12px;
-    }
+            <div class="product-info dark-text">
+                <span class="product-badge badge-dark">PREMIUM</span>
+                <h2 class="blue-title">GRAPHENE ULTRA 10H</h2>
+                <ul>
+                    <li>DURÉE DE VIE DE 5 ANS+</li>
+                    <li>EFFET SUPER HYDROPHOBE UNIQUE</li>
+                    <li>DURÉE DE VIE DE 5 ANS+</li>
+                    <li>EFFET BLINDAGE DE CURE</li>
+                    <li>PROTECTION EXTÉRIEURE</li>
+                </ul>
+                <button class="btn btn-dark">COMMANDER MAINTENANT</button>
+            </div>
+            <div class="product-specs dark-specs">
+                <table class="specs-table">
+                    <tr><td>Qualité</td><td>A+++</td></tr>
+                    <tr><td>Capacité</td><td>30ml</td></tr>
+                    <tr><td>Ingrédient Principal</td><td>Grapheneceramic</td></tr>
+                    <tr><td>Bénéfices</td><td>Ultra Protection</td></tr>
+                </table>
+                <div class="badges">
+                    <div class="badge"><span class="angle">125°</span> Angle de contact</div>
+                    <div class="badge"><span class="count">1000+</span> Lavages testés</div>
+                </div>
+            </div>
+        </section>
 
-    /* 6. تصغير العنوان الرئيسي */
-    .hero-title-container {
-        margin-top: 15px;
-    }
+        <!-- المنتج الثالث -->
+        <section class="product-card dark-bg">
+            <div class="product-image">
+                <img src="images/diamond-box.jpg" alt="Diamond Shield 12H Box 30ml">
+            </div>
 
-    .main-title {
-        font-size: 15px; /* تصغير كلمة PROTECTION BEYOND COMPARE */
-        letter-spacing: 1px;
-    }
+            <div class="product-info">
+                <span class="product-badge">EXTRÊME</span>
+                <h2>DIAMOND SHIELD 12H</h2>
+                <h3 class="sub-blue">LA RÉFÉRENCE ABSOLUE POUR PEINTURES ET VINYLES</h3>
+                <ul>
+                    <li>DURETÉ 12H RÉVOLUTIONNAIRE</li>
+                    <li>PROTECTION EXTRÊME DE 7 ANS</li>
+                    <li>POUR FILM ET VINYLES</li>
+                    <li>EFFET SUPER HYDROPHOBIQUE</li>
+                </ul>
+                <button class="btn btn-light">ACHETER LE DIAMOND SHIELD</button>
+            </div>
+            <div class="product-specs">
+                <table class="specs-table">
+                    <tr><td>Qualité</td><td>A+++++</td></tr>
+                    <tr><td>Capacité</td><td>30ml</td></tr>
+                    <tr><td>Protection</td><td>7 ans</td></tr>
+                    <tr><td>Bénéfices</td><td>Protection Vinyle</td></tr>
+                </table>
+                <div class="badges">
+                    <div class="badge"><span class="angle">137°</span> Angle de contact</div>
+                    <div class="badge"><span class="count">🛡️</span> POUR FILMS VINYLES</div>
+                </div>
+            </div>
+        </section>
 
-    /* --- باقي أجزاء الصفحة على الهاتف --- */
-    .product-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    </main>
 
-    .btn {
-        align-self: center;
-    }
+    <!-- قسم التطبيقات -->
+    <section class="applications-section">
+        <h2 class="section-title">APPLICATIONS</h2>
+        <div class="apps-grid">
+            <div class="app-item">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Gloss Surface">
+                <div class="app-title">GLOSS</div>
+            </div>
+            <div class="app-item">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="Matte Surface">
+                <div class="app-title">MATTE</div>
+            </div>
+            <div class="app-item">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Vinyl Wrap">
+                <div class="app-title">VINYL</div>
+            </div>
+        </div>
+    </section>
 
-    .product-info ul li {
-        text-align: left;
-    }
+    <!-- الفوتر -->
+    <footer class="main-footer">
+        <div class="footer-brand">
+            <span class="iso-badge">ISO</span> ISO9001/MSDS
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:contact@veloxcoating.com">contact@veloxcoating.com</a>
+            <span class="footer-sep">|</span>
+            <a href="https://www.veloxcoating.com" target="_blank">www.veloxcoating.com</a>
+        </div>
+    </footer>
 
-    .apps-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .main-footer {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
+</body>
+    </html>
+                            
