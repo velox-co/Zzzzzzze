@@ -1,0 +1,483 @@
+/* --- إعدادات وتصفير عام للموقع --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #060b11;
+    /* خلفية كربونية مدمجة بالكامل لتبدو مطابقة للـ Carbon Fiber بالتصميم */
+    background-image: 
+        linear-gradient(45deg, #0a111a 25%, transparent 25%), 
+        linear-gradient(-45deg, #0a111a 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #0a111a 75%), 
+        linear-gradient(-45deg, transparent 75%, #0a111a 75%);
+    background-size: 6px 6px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- الهيدر (Navbar) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: linear-gradient(to bottom, rgba(3, 7, 13, 0.95), rgba(3, 7, 13, 0.7));
+    border-bottom: 2px solid rgba(0, 162, 255, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #a0aab5;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #00a2ff;
+    text-shadow: 0 0 12px rgba(0, 162, 255, 0.8);
+}
+
+.main-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 6px;
+    text-shadow: 0 0 15px rgba(0, 162, 255, 0.5);
+}
+
+/* --- البانر الاحترافي العلوي (Hero) --- */
+.hero-banner {
+    height: 60vh;
+    background: url('images/hero-bg.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #00a2ff;
+    box-shadow: 0 10px 30px rgba(0, 162, 255, 0.15);
+}
+
+.hero-overlay {
+    background: rgba(3, 7, 13, 0.65);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 0 25px rgba(0, 162, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #d1dbe5;
+    max-width: 600px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/* --- حاوية الكروت والمنتجات --- */
+.products-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* الكروت وتوزيعها ثلاثي الأعمدة تفاعلياً */
+.product-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 162, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.dark-bg {
+    background: linear-gradient(145deg, #091320 0%, #03070d 100%);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(0, 162, 255, 0.05);
+}
+
+.dark-bg:hover {
+    box-shadow: 0 20px 45px rgba(0, 162, 255, 0.15);
+}
+
+.light-bg {
+    background: linear-gradient(145deg, #f0f5fa 0%, #d5e0eb 100%);
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* الصور والتكبير الحركي */
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* تفاصيل ونصوص المنتجات */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-badge {
+    align-self: flex-start;
+    background: #00a2ff;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.badge-dark {
+    background: #0b2240;
+}
+
+.product-info h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.blue-title {
+    color: #0b2240;
+}
+
+.sub-blue {
+    color: #00a2ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: #a2b0be;
+    line-height: 1.5;
+}
+
+.dark-desc {
+    color: #4a5568;
+}
+
+.product-info ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.product-info ul li {
+    font-size: 13.5px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
+    font-weight: 500;
+}
+
+.dark-bg .product-info ul li {
+    color: #e2e8f0;
+}
+
+.light-bg .product-info ul li {
+    color: #2d3748;
+}
+
+.product-info ul li::before {
+    content: "■";
+    color: #00a2ff;
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+    top: 2px;
+}
+
+.light-bg .product-info ul li::before {
+    color: #0b2240;
+}
+
+/* الأزرار الاحترافية */
+.btn {
+    align-self: flex-start;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-blue {
+    background: linear-gradient(135deg, #0088ff 0%, #0055b3 100%);
+    color: white;
+}
+
+.btn-blue:hover {
+    background: linear-gradient(135deg, #00a2ff 0%, #0066cc 100%);
+    box-shadow: 0 6px 20px rgba(0, 162, 255, 0.4);
+}
+
+.btn-dark {
+    background: #0b2240;
+    color: white;
+}
+
+.btn-dark:hover {
+    background: #14355e;
+    box-shadow: 0 6px 20px rgba(11, 34, 64, 0.4);
+}
+
+/* جداول المواصفات والخصائص */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.dark-bg .specs-table td {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 12px;
+    color: #cbd5e1;
+}
+
+.dark-bg .specs-table tr td:first-child {
+    background: rgba(255,255,255,0.03);
+    font-weight: bold;
+    color: #94a3b8;
+}
+
+.light-bg .specs-table td {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 8px 12px;
+    color: #1a202c;
+}
+
+.light-bg .specs-table tr td:first-child {
+    background: rgba(0,0,0,0.04);
+    font-weight: bold;
+}
+
+/* البادجات والعدادات */
+.badges {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.badge {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 162, 255, 0.2);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.light-bg .badge {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #4a5568;
+}
+
+.badge span {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #00a2ff;
+    margin-bottom: 4px;
+}
+
+.light-bg .badge span {
+    color: #0b2240;
+}
+
+/* --- قسم التطبيقات --- */
+.applications-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #00a2ff;
+    margin: 10px auto 0 auto;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.app-item {
+    position: relative;
+    border: 3px solid #142230;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.app-item:hover {
+    border-color: #00a2ff;
+    transform: scale(1.02);
+}
+
+.app-item img {
+    width: 100%;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+}
+
+.app-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* --- الفوتر (Footer) --- */
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 30px auto;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(0, 162, 255, 0.2);
+    font-size: 13px;
+    color: #718096;
+}
+
+.iso-badge {
+    background: #142230;
+    color: #00a2ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 162, 255, 0.3);
+}
+
+.footer-contact a {
+    color: #00a2ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+}
+
+.footer-sep {
+    margin: 0 10px;
+}
+
+/* --- الشاشات المتجاوبة للأجهزة الذكية (Mobile) --- */
+@media (max-width: 992px) {
+    .product-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
