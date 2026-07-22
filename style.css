@@ -7,7 +7,6 @@
 
 body {
     background-color: #060b11;
-    /* نمط ألياف الكربون النسيجي */
     background-image: 
         linear-gradient(45deg, #0a111a 25%, transparent 25%), 
         linear-gradient(-45deg, #0a111a 25%, transparent 25%), 
@@ -23,7 +22,7 @@ body {
 .header-container {
     background-color: #050b11;
     background-image: 
-        radial-gradient(circle at 50% 30%, rgba(0, 162, 255, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 50% 35%, rgba(0, 162, 255, 0.18) 0%, transparent 60%),
         linear-gradient(45deg, #0a131d 25%, transparent 25%), 
         linear-gradient(-45deg, #0a131d 25%, transparent 25%), 
         linear-gradient(45deg, transparent 75%, #0a131d 75%), 
@@ -76,7 +75,7 @@ body {
     color: #ffffff;
 }
 
-/* التوهج الأزرق والحد السفي لـ Products */
+/* التوهج الأزرق تحت خيار Products */
 .nav-item.active {
     color: #67c8ff;
     text-shadow: 0 0 10px rgba(0, 162, 255, 0.7);
@@ -96,24 +95,28 @@ body {
     z-index: 5;
 }
 
-/* الشعار الأوسط */
+/* الشعار المدمج واللوجو */
 .brand-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
-.logo-shield {
+.logo-wrapper {
     width: 65px;
     height: 65px;
-    filter: drop-shadow(0 0 10px rgba(0, 162, 255, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 12px rgba(0, 162, 255, 0.5));
 }
 
-.shield-icon {
-    width: 100%;
-    height: 100%;
+.brand-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .brand-name {
@@ -194,6 +197,73 @@ body {
     filter: drop-shadow(0 15px 20px rgba(0,0,0,0.7));
 }
 
+/* معرض صور المنتجات */
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.gallery-main img {
+    max-width: 100%;
+    max-height: 210px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.gallery-thumbs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.thumb-item {
+    position: relative;
+    width: 95px;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid #0b2240;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.border-blue {
+    border: 2px solid rgba(0, 162, 255, 0.4);
+}
+
+.thumb-item:hover {
+    transform: scale(1.05);
+    border-color: #00a2ff;
+}
+
+.thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(11, 34, 64, 0.85);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    text-align: center;
+    padding: 2px 0;
+    letter-spacing: 0.5px;
+}
+
+.dark-label {
+    background: rgba(3, 7, 13, 0.85);
+    color: #67c8ff;
+}
+
 .product-info {
     display: flex;
     flex-direction: column;
@@ -211,9 +281,7 @@ body {
     letter-spacing: 1px;
 }
 
-.badge-dark {
-    background: #0b2240;
-}
+.badge-dark { background: #0b2240; }
 
 .product-info h2 {
     font-size: 18px;
@@ -242,9 +310,7 @@ body {
     left: 0;
 }
 
-.light-bg .product-info ul li::before {
-    color: #0b2240;
-}
+.light-bg .product-info ul li::before { color: #0b2240; }
 
 .btn {
     align-self: flex-start;
@@ -355,16 +421,8 @@ body {
     color: #667788;
 }
 
-.iso-badge {
-    font-weight: bold;
-    color: #8fa0b0;
-}
-
-.footer-contact a {
-    color: #667788;
-    text-decoration: none;
-}
-
+.iso-badge { font-weight: bold; color: #8fa0b0; }
+.footer-contact a { color: #667788; text-decoration: none; }
 .footer-sep { margin: 0 8px; }
 
 /* --- التجاوب مع الهواتف --- */
@@ -398,5 +456,5 @@ body {
         gap: 10px;
         text-align: center;
     }
-  }
-  
+    }
+    
