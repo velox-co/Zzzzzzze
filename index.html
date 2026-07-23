@@ -13,13 +13,11 @@
     <!-- الواجهة العلوية -->
     <header class="header-container">
         <div class="navbar-wrapper">
-            <!-- الروابط اليسرى -->
             <nav class="nav-group nav-left">
                 <a href="#" class="nav-item active">Products</a>
                 <a href="#" class="nav-item">Technology</a>
             </nav>
 
-            <!-- الشعار الأوسط -->
             <div class="brand-center">
                 <div class="logo-wrapper">
                     <img src="images/logo.png" alt="VELOX Logo" class="brand-logo-img">
@@ -27,17 +25,14 @@
                 <div class="brand-name">VELOX</div>
             </div>
 
-            <!-- الروابط اليمنى -->
             <nav class="nav-group nav-right">
                 <a href="#" class="nav-item">About</a>
                 <a href="#" class="nav-item">Contact</a>
             </nav>
         </div>
 
-        <!-- الخط الفاصل المضاء -->
         <div class="divider-line"></div>
 
-        <!-- العنوان الرئيسي -->
         <div class="hero-title-container">
             <h1 class="main-title">PROTECTION BEYOND COMPARE</h1>
         </div>
@@ -50,14 +45,17 @@
         <section class="product-card dark-bg">
             <div class="product-gallery">
                 <div class="gallery-main">
-                    <img src="images/graphene-box.jpg" alt="VELOX Graphene Ceramic Coating Box 30ml">
+                    <img id="main-img-1" src="images/graphene-box.jpg" alt="VELOX Graphene Ceramic Coating Box 30ml">
                 </div>
                 <div class="gallery-thumbs">
-                    <div class="thumb-item border-blue">
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-1', 'images/graphene-box.jpg')">
+                        <img src="images/graphene-box.jpg" alt="Produit">
+                    </div>
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-1', 'images/graphene-gloss.png')">
                         <img src="images/graphene-gloss.png" alt="Brillance">
                         <span class="thumb-label dark-label">BRILLANCE</span>
                     </div>
-                    <div class="thumb-item border-blue">
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-1', 'images/graphene-sheeting.png')">
                         <img src="images/graphene-sheeting.png" alt="Écoulement">
                         <span class="thumb-label dark-label">ÉCOULEMENT</span>
                     </div>
@@ -74,7 +72,10 @@
                     <li>Effet brillance spectaculaire</li>
                     <li>Céramique adaptable</li>
                 </ul>
-                <button class="btn btn-light">COMMANDER MAINTENANT</button>
+                <div class="action-buttons">
+                    <button class="btn btn-buy" onclick="buyProduct('Graphene Ceramic Coating 10H')">COMMANDER</button>
+                    <button class="btn btn-light" onclick="openModal('modal1')">EN SAVOIR PLUS</button>
+                </div>
             </div>
             <div class="product-specs">
                 <table class="specs-table">
@@ -92,8 +93,23 @@
 
         <!-- المنتج الثاني -->
         <section class="product-card light-bg">
-            <div class="product-image">
-                <img src="images/ultra-box.jpg" alt="Graphene Ultra 10H Box 30ml">
+            <div class="product-gallery">
+                <div class="gallery-main">
+                    <img id="main-img-2" src="images/ultra-box.jpg" alt="Graphene Ultra 10H Box 30ml">
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="thumb-item" onclick="changeImage('main-img-2', 'images/ultra-box.jpg')">
+                        <img src="images/ultra-box.jpg" alt="Produit">
+                    </div>
+                    <div class="thumb-item" onclick="changeImage('main-img-2', 'images/ultra-beading.png')">
+                        <img src="images/ultra-beading.png" alt="Hydrophobe">
+                        <span class="thumb-label">HYDROPHOBE</span>
+                    </div>
+                    <div class="thumb-item" onclick="changeImage('main-img-2', 'images/ultra-car.png')">
+                        <img src="images/ultra-car.png" alt="Résultat">
+                        <span class="thumb-label">RÉSULTAT</span>
+                    </div>
+                </div>
             </div>
 
             <div class="product-info dark-text">
@@ -106,7 +122,10 @@
                     <li>EFFET BLINDAGE DE CURE</li>
                     <li>PROTECTION EXTÉRIEURE</li>
                 </ul>
-                <button class="btn btn-dark">COMMANDER MAINTENANT</button>
+                <div class="action-buttons">
+                    <button class="btn btn-buy-dark" onclick="buyProduct('Graphene Ultra 10H')">COMMANDER</button>
+                    <button class="btn btn-dark" onclick="openModal('modal2')">EN SAVOIR PLUS</button>
+                </div>
             </div>
             <div class="product-specs dark-specs">
                 <table class="specs-table">
@@ -124,8 +143,23 @@
 
         <!-- المنتج الثالث -->
         <section class="product-card dark-bg">
-            <div class="product-image">
-                <img src="images/diamond-box.jpg" alt="Diamond Shield 12H Box 30ml">
+            <div class="product-gallery">
+                <div class="gallery-main">
+                    <img id="main-img-3" src="images/diamond-box.jpg" alt="Diamond Shield 12H Box 30ml">
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-3', 'images/diamond-box.jpg')">
+                        <img src="images/diamond-box.jpg" alt="Produit">
+                    </div>
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-3', 'images/diamond-compare.png')">
+                        <img src="images/diamond-compare.png" alt="Comparaison">
+                        <span class="thumb-label dark-label">COMPARAISON</span>
+                    </div>
+                    <div class="thumb-item border-blue" onclick="changeImage('main-img-3', 'images/diamond-beading.png')">
+                        <img src="images/diamond-beading.png" alt="Hydrophobe">
+                        <span class="thumb-label dark-label">HYDROPHOBE</span>
+                    </div>
+                </div>
             </div>
 
             <div class="product-info">
@@ -138,7 +172,10 @@
                     <li>POUR FILM ET VINYLES</li>
                     <li>EFFET SUPER HYDROPHOBIQUE</li>
                 </ul>
-                <button class="btn btn-light">ACHETER LE DIAMOND SHIELD</button>
+                <div class="action-buttons">
+                    <button class="btn btn-buy" onclick="buyProduct('Diamond Shield 12H')">COMMANDER</button>
+                    <button class="btn btn-light" onclick="openModal('modal3')">EN SAVOIR PLUS</button>
+                </div>
             </div>
             <div class="product-specs">
                 <table class="specs-table">
@@ -155,6 +192,183 @@
         </section>
 
     </main>
+
+    <!-- قالب الأقسام المشتركة داخل النوافذ -->
+    <template id="common-modal-sections">
+        <div class="common-sections-wrapper">
+            <div class="modal-section-card">
+                <div class="card-tag">SIMULATEUR D'EFFET PERLANT & HYDROPHOBE</div>
+                <p class="section-desc">Angle de contact sur l'évacuation de l'eau :</p>
+                <div class="simulator-box">
+                    <div class="sim-legend">
+                        <span><i class="dot red"></i> Standard (Cire) : &lt;90°</span>
+                        <span><i class="dot cyan"></i> Velox Coatings : 120° - 137°</span>
+                    </div>
+                    <div class="angle-display">ANGLE DE CONTACT : <strong class="cyan-text">120° - 137°</strong></div>
+                    <div class="preset-btns">
+                        <span class="preset">Graphene 120°</span>
+                        <span class="preset">Ultra 125°</span>
+                        <span class="preset">Diamond 137°</span>
+                    </div>
+                    <div class="perlant-info">
+                        <strong>EFFET PERLANT SUPÉRIEUR :</strong>
+                        <p>L'eau se fragmente en perles parfaites qui glissent instantanément sous l'effet du vent dès 40 km/h, emportant la saleté avec elles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section-card">
+                <div class="card-tag">PROTOCOLE D'APPLICATION EXPERT</div>
+                <h3 class="card-title">GUIDE D'APPLICATION PAS À PAS</h3>
+                <div class="steps-grid">
+                    <div class="step-card active">
+                        <span class="step-num">ÉTAPE 01</span>
+                        <h4>PRÉPARATION DE SURFACE</h4>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">ÉTAPE 02</span>
+                        <h4>APPLICATION DU PRODUIT</h4>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">ÉTAPE 03</span>
+                        <h4>ESSUYAGE & FINITION</h4>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">ÉTAPE 04</span>
+                        <h4>PHASE DE SÉCHAGE</h4>
+                    </div>
+                </div>
+
+                <div class="step-details">
+                    <span class="time-badge">TEMPS ESTIMÉ : 1 - 3 HEURES</span>
+                    <p class="step-highlight">La clé d'une liaison nanométrique parfaite.</p>
+                    <p>La céramique a besoin d'une surface parfaitement nue pour s'accrocher chimiquement au vernis.</p>
+
+                    <div class="alert-box">
+                        🛡️ Respectez scrupuleusement les consignes de sécurité (gants nitrile, masque filtrant).
+                    </div>
+
+                    <h5>CONSEILS ET PROTOCOLE DE DETAILING :</h5>
+                    <ol class="protocol-list">
+                        <li>Laver minutieusement avec un shampoing dégraissant (pH neutre).</li>
+                        <li>Passer la barre d'argile (Clay bar) pour éliminer les contaminants.</li>
+                        <li>Effectuer un polissage de correction si nécessaire.</li>
+                        <li>Dégraisser la surface à l'IPA (Alcool Isopropylique).</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="modal-section-card">
+                <div class="card-tag">RETOUR D'EXPÉRIENCE PROFESSIONNEL</div>
+                <h3 class="card-title">TÉMOIGNAGES DE PROFESSIONNELS</h3>
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="stars">★★★★★ <span class="prod-tag">DIAMOND SHIELD 12H</span></div>
+                        <p class="review-text">"Le Diamond Shield 12H est une révolution pour les films mates. Il maintient l'aspect mat satiné d'origine sans aucun blanchiment."</p>
+                        <div class="author-info"><strong>ALEXANDRE G.</strong> - Porsche 911 GT3 RS</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★ <span class="prod-tag">GRAPHENE ULTRA 10H</span></div>
+                        <p class="review-text">"L'application du Graphene Ultra est d'une facilité déconcertante. Le fini brillant est incroyablement profond."</p>
+                        <div class="author-info"><strong>MARC-ANTOINE L.</strong> - Tesla Model S Plaid</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section-card">
+                <div class="card-tag">CENTRE D'ASSISTANCE VELOX</div>
+                <h3 class="card-title">QUESTIONS FRÉQUENTES (FAQ)</h3>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>❓ Quelle est la différence entre un traitement SiO2 et le Graphène VELOX ?</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>Le graphène réduit l'accumulation de chaleur sur la carrosserie, évitant les taches d'eau calcaire tout en offrant une résistance aux rayures supérieure (10H à 12H).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>❓ Puis-je appliquer le revêtement sur un film PPF ou Covering ?</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>Oui ! Le Diamond Shield 12H et le Graphene Ultra sont 100% compatibles avec les films vinyles et PPF.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-card">
+                <span class="card-tag cyan-tag">RESTEZ INFORMÉ</span>
+                <h3>NEWSLETTER PRIVÉE VELOX</h3>
+                <p>Inscrivez-vous pour recevoir nos offres exclusives et guides de detailing.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                    <input type="email" placeholder="votre.email@adresse.com" required>
+                    <button type="submit" class="btn-cyan">S'INSCRIRE</button>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-header">
+                <h2>GRAPHÈNE CÉRAMIQUE 10H</h2>
+                <span class="modal-subtitle">Revêtement Graphène de Qualité Professionnelle - 30ml</span>
+            </div>
+            <div class="modal-body">
+                <h3>Caractéristiques Principales :</h3>
+                <ul>
+                    <li>Protection durable de 3 à 5 ans avec excellente répulsion de l'eau.</li>
+                    <li>Nanotechnologie avancée de la céramique au graphène.</li>
+                    <li>Résistance maximale aux micro-rayures et produits chimiques.</li>
+                </ul>
+                <div class="shared-sections-target"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-header">
+                <h2>GRAPHÈNE ULTRA 10H</h2>
+                <span class="modal-subtitle">Formule Nano-Tech Monocouche - 30ml</span>
+            </div>
+            <div class="modal-body">
+                <h3>Caractéristiques :</h3>
+                <ul>
+                    <li>Effet super hydrophobe unique (angle 125°).</li>
+                    <li>Durabilité certifiée de 5+ années.</li>
+                    <li>Tolérance pH 1 à 12 et résistance jusqu'à 760°C.</li>
+                </ul>
+                <div class="shared-sections-target"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <div class="modal-header">
+                <h2>DIAMOND SHIELD 12H</h2>
+                <span class="modal-subtitle">Protection Ultime Peintures & Vinyles - 30ml</span>
+            </div>
+            <div class="modal-body">
+                <h3>Caractéristiques :</h3>
+                <ul>
+                    <li>Dureté 12H révolutionnaire.</li>
+                    <li>Spécialement formulé pour films vinyles (covering) et vernis.</li>
+                    <li>Protection garantie de 7 ans.</li>
+                </ul>
+                <div class="shared-sections-target"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- قسم التطبيقات -->
     <section class="applications-section">
@@ -183,10 +397,4 @@
         <div class="footer-contact">
             <a href="mailto:contact@veloxcoating.com">contact@veloxcoating.com</a>
             <span class="footer-sep">|</span>
-            <a href="https://www.veloxcoating.com" target="_blank">www.veloxcoating.com</a>
-        </div>
-    </footer>
-
-</body>
-    </html>
-    
+            <a href="https://www.veloxcoating.com" target="_blank">www
